@@ -1,0 +1,65 @@
+<user_query>
+{user_query}
+</user_query>
+
+<parameters>
+<username>{username}</username>
+<start_date>{start_date}</start_date>
+<end_date>{end_date}</end_date>
+</parameters>
+
+<instructions>
+<step number="1" name="Fetch Financial Data">
+Please use these tools to get my financial data:
+1. Call get_bank_transactions with the provided username, start_date, and end_date
+2. Call get_credit_card_transactions with the same parameters
+3. Save both results to data/raw_data/bank_transactions.json and data/raw_data/credit_card_transactions.json
+</step>
+
+<step number="2" name="Initial Analysis">
+After fetching the data:
+1. Identify all subscriptions (recurring charges)
+2. Calculate spending by category
+3. Look for any anomalies or unusual charges
+4. Summarize the financial situation
+</step>
+
+<step number="3" name="Delegate to Sub-Agents">
+Based on the user query, invoke the appropriate sub-agents.
+
+IMPORTANT: The sub-agents are independent and should be invoked IN PARALLEL for maximum efficiency.
+All three agents can work simultaneously since they all operate on the same transaction data.
+
+If looking for savings, invoke ALL THREE agents in parallel:
+- Invoke research_agent to find cheaper alternatives for subscriptions
+- Invoke negotiation_agent to create strategies for negotiating bills (like internet, insurance)
+- Invoke tax_agent to identify tax deduction opportunities
+
+Provide each sub-agent with:
+1. The relevant transaction data they need to analyze
+2. EXPLICIT instruction to write their output file to the correct location:
+   - research_agent: "Write your output to data/agent_outputs/research_results.md"
+   - negotiation_agent: "Write your output to data/agent_outputs/negotiation_scripts.md"
+   - tax_agent: "Write your output to data/agent_outputs/tax_analysis.md"
+
+Do NOT wait for one agent to complete before invoking the next - launch them all at once.
+</step>
+
+<step number="4" name="Synthesize Results">
+After sub-agents complete:
+1. Read their output files from data/agent_outputs/
+2. Combine all findings
+3. Calculate total potential savings
+4. Prioritize recommendations by impact
+5. Create a final report at data/final_report.md
+</step>
+
+<step number="5" name="Complete the Task">
+After creating the final report, your task is complete. Do NOT ask follow-up questions.
+Simply summarize what you accomplished and finish.
+</step>
+</instructions>
+
+<important>
+Please proceed step by step and let me know what you're doing at each stage.
+</important>

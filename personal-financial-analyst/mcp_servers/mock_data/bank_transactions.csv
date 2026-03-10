@@ -1,0 +1,74 @@
+username,date,description,category,amount,recurring
+john_doe,2026-01-01,Paycheck Deposit - Acme Corp,Income,4200.00,true
+john_doe,2026-01-01,Mortgage Payment,Housing,-2200.00,true
+john_doe,2026-01-03,Transfer to Savings,Savings,-500.00,false
+john_doe,2026-01-05,Electric Company - PG&E,Utilities,-145.00,true
+john_doe,2026-01-06,Water Utility,Utilities,-65.00,true
+john_doe,2026-01-08,Natural Gas Bill,Utilities,-82.00,true
+john_doe,2026-01-10,Internet - Comcast,Utilities,-89.99,true
+john_doe,2026-01-12,Trash Collection,Utilities,-45.00,true
+john_doe,2026-01-14,Netflix,Entertainment,-15.99,true
+john_doe,2026-01-14,Spotify Premium,Entertainment,-10.99,true
+john_doe,2026-01-15,Planet Fitness,Health,-24.99,true
+john_doe,2026-01-15,Paycheck Deposit - Acme Corp,Income,4200.00,true
+john_doe,2026-01-16,Whole Foods Market,Groceries,-127.43,false
+john_doe,2026-01-18,Target,Groceries,-87.32,false
+john_doe,2026-01-20,Trader Joes,Groceries,-92.15,false
+john_doe,2026-01-22,Safeway,Groceries,-110.50,false
+john_doe,2026-01-24,Costco,Groceries,-245.67,false
+john_doe,2026-01-25,Car Insurance - State Farm,Insurance,-185.00,true
+john_doe,2026-01-28,ATM Withdrawal,Cash,-100.00,false
+john_doe,2026-01-29,Check Deposit,Income,250.00,false
+john_doe,2026-01-30,Transfer from Savings,Transfer,300.00,false
+john_doe,2026-02-01,Paycheck Deposit - Acme Corp,Income,4200.00,true
+john_doe,2026-02-01,Mortgage Payment,Housing,-2200.00,true
+john_doe,2026-02-03,Transfer to Savings,Savings,-500.00,false
+john_doe,2026-02-05,Electric Company - PG&E,Utilities,-152.00,true
+john_doe,2026-02-06,Water Utility,Utilities,-65.00,true
+john_doe,2026-02-08,Natural Gas Bill,Utilities,-95.00,true
+john_doe,2026-02-10,Internet - Comcast,Utilities,-89.99,true
+john_doe,2026-02-12,Trash Collection,Utilities,-45.00,true
+john_doe,2026-02-14,Netflix,Entertainment,-15.99,true
+john_doe,2026-02-14,Spotify Premium,Entertainment,-10.99,true
+john_doe,2026-02-15,Planet Fitness,Health,-24.99,true
+john_doe,2026-02-15,Paycheck Deposit - Acme Corp,Income,4200.00,true
+john_doe,2026-02-16,Whole Foods Market,Groceries,-142.33,false
+john_doe,2026-02-18,Target,Groceries,-95.50,false
+john_doe,2026-02-20,Trader Joes,Groceries,-88.25,false
+john_doe,2026-02-22,Safeway,Groceries,-125.80,false
+john_doe,2026-02-25,Car Insurance - State Farm,Insurance,-185.00,true
+jane_smith,2026-01-01,Salary Deposit - Tech Corp,Income,6500.00,true
+jane_smith,2026-01-01,Mortgage Payment,Housing,-2800.00,true
+jane_smith,2026-01-02,HOA Fee,Housing,-350.00,true
+jane_smith,2026-01-05,Electric Company - PG&E,Utilities,-185.00,true
+jane_smith,2026-01-06,Water Utility,Utilities,-82.00,true
+jane_smith,2026-01-08,Natural Gas Bill,Utilities,-110.00,true
+jane_smith,2026-01-10,Internet - AT&T Fiber,Utilities,-75.00,true
+jane_smith,2026-01-12,Trash Collection,Utilities,-48.00,true
+jane_smith,2026-01-14,HBO Max,Entertainment,-15.99,true
+jane_smith,2026-01-14,Apple Music,Entertainment,-10.99,true
+jane_smith,2026-01-15,Equinox Gym,Health,-200.00,true
+jane_smith,2026-01-15,Salary Deposit - Tech Corp,Income,6500.00,true
+jane_smith,2026-01-16,Whole Foods Market,Groceries,-165.43,false
+jane_smith,2026-01-18,Trader Joes,Groceries,-112.85,false
+jane_smith,2026-01-20,Safeway,Groceries,-98.20,false
+jane_smith,2026-01-22,Farmers Market,Groceries,-45.50,false
+jane_smith,2026-01-24,Costco,Groceries,-312.40,false
+jane_smith,2026-01-25,Car Insurance - Progressive,Insurance,-220.00,true
+jane_smith,2026-01-27,Home Insurance - Allstate,Insurance,-145.00,true
+jane_smith,2026-01-28,Transfer to Investment Account,Savings,-1000.00,false
+jane_smith,2026-02-01,Salary Deposit - Tech Corp,Income,6500.00,true
+jane_smith,2026-02-01,Mortgage Payment,Housing,-2800.00,true
+jane_smith,2026-02-02,HOA Fee,Housing,-350.00,true
+jane_smith,2026-02-05,Electric Company - PG&E,Utilities,-192.00,true
+jane_smith,2026-02-06,Water Utility,Utilities,-82.00,true
+jane_smith,2026-02-08,Natural Gas Bill,Utilities,-105.00,true
+jane_smith,2026-02-10,Internet - AT&T Fiber,Utilities,-75.00,true
+jane_smith,2026-02-12,Trash Collection,Utilities,-48.00,true
+jane_smith,2026-02-14,HBO Max,Entertainment,-15.99,true
+jane_smith,2026-02-14,Apple Music,Entertainment,-10.99,true
+jane_smith,2026-02-15,Equinox Gym,Health,-200.00,true
+jane_smith,2026-02-15,Salary Deposit - Tech Corp,Income,6500.00,true
+jane_smith,2026-02-16,Whole Foods Market,Groceries,-178.90,false
+jane_smith,2026-02-18,Trader Joes,Groceries,-125.35,false
+jane_smith,2026-02-25,Car Insurance - Progressive,Insurance,-220.00,true
