@@ -179,6 +179,85 @@ def _get_company_info(
         }
 
 
+def _format_market_cap(
+    market_cap: int | float | None
+) -> str | None:
+    """Format market cap number into human-readable string."""
+    if market_cap is None:
+        return None
+
+    try:
+        value = float(market_cap)
+    except (TypeError, ValueError):
+        return None
+
+    if value >= 1_000_000_000_000:
+        return f"{value / 1_000_000_000_000:.1f}T"
+    if value >= 1_000_000_000:
+        return f"{value / 1_000_000_000:.1f}B"
+    if value >= 1_000_000:
+        return f"{value / 1_000_000:.1f}M"
+    if value >= 1_000:
+        return f"{value / 1_000:.1f}K"
+    return f"{value:.0f}"
+
+
+def _compare_stocks(
+    symbol1: str,
+    symbol2: str
+) -> Dict[str, Any]:
+    """Compare two stocks side-by-side.
+
+    Args:
+        symbol1: First stock symbol (e.g., 'AAPL')
+        symbol2: Second stock symbol (e.g., 'MSFT')
+
+    Returns:
+        Dictionary with comparison data for both stocks
+    """
+    try:
+        ticker1 = symbol1.upper()
+        ticker2 = symbol2.upper()
+
+        stock1 = yf.Ticker(ticker1)
+        stock2 = yf.Ticker(ticker2)
+
+        info1 = stock1.info
+        info2 = stock2.info
+
+        def _extract_stock_data(ticker: str, info: Dict[str, Any]) -> Dict[str, Any]:
+            current_price = info.get('currentPrice') or info.get('regularMarketPrice')
+            if current_price is None:
+                return {
+                    "symbol": ticker,
+                    "error": f"Could not retrieve price for {ticker}"
+                }
+
+            return {
+                "symbol": ticker,
+                "current_price": round(current_price, 2),
+                "company_name": info.get('longName', ticker),
+                "market_cap": _format_market_cap(info.get('marketCap'))
+            }
+
+        return {
+            "comparison": {
+                "symbol1": ticker1,
+                "symbol2": ticker2,
+                "stock1": _extract_stock_data(ticker1, info1),
+                "stock2": _extract_stock_data(ticker2, info2)
+            }
+        }
+
+    except Exception as e:
+        logger.error(f"Error comparing stocks {symbol1} and {symbol2}: {e}")
+        return {
+            "error": str(e),
+            "symbol1": symbol1.upper(),
+            "symbol2": symbol2.upper()
+        }
+
+
 # Tool definitions for Strands agent
 STOCK_TOOLS = [
     {
@@ -230,6 +309,25 @@ STOCK_TOOLS = [
             "required": ["ticker"]
         },
         "function": _get_company_info
+    },
+    {
+        "name": "compare_stocks",
+        "description": "Compare two stocks side-by-side. Use this when the user asks to compare two companies or two ticker symbols directly.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "symbol1": {
+                    "type": "string",
+                    "description": "First stock symbol to compare"
+                },
+                "symbol2": {
+                    "type": "string",
+                    "description": "Second stock symbol to compare"
+                }
+            },
+            "required": ["symbol1", "symbol2"]
+        },
+        "function": _compare_stocks
     }
 ]
 
